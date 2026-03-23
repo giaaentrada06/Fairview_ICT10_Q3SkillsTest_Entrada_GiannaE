@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Creation</title>
+    <style>
+    body{
+        font-family: 'Trebuchet MS';
+        background-image:none;
+        text-align:center;
+    }
+
+    .box{
+        background:white;
+        width:250px;
+        margin:120px auto;
+        padding:20px;
+        border-radius:10px;
+        border:1px solid gray;
+    }
+
+    input{
+        width:90%;
+        padding:7px;
+        margin:5px;
+    }
+
+    button{
+        padding:8px;
+        width:95%;
+        background-color:#4f46e5;
+        color:white;
+        border:none;
+    }
+</style>
+    <script>
+    function checkAccount(){
+        var user = document.getElementById("user").value;
+        var pass = document.getElementById("pass").value;
+    var msg = "";
+
+    if(user.length < 7){
+        msg = "Username must be at least 7 characters.";
+    }
+    if(user.capitalization){
+        msg = "Full Name must use Proper Capitalization (Title Case).";
+    }   
+    else if(pass.length < 10){
+        msg = "Password must be at least 10 characters.";
+    }
+    else{
+        msg = "Account Created!";
+    }
+
+
+
+    document.getElementById("result").innerHTML = msg;
+}
+</script>
+    </script>
+</head>
+
+<body>
+
+<h2>Account Creation</h2>
+
+Username:<br>
+<input type="text" id="user"><br><br>
+
+Password:<br>
+<input type="password" id="pass"><br><br>
+
+<button onclick="checkAccount()">Sign up</button>
+
+<p id="result"></p>
+
+</body>
+</html>
